@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
-@keyframes bounce-1{
+@keyframes bounce-1 {
     0% {
         transform: translateY(-100px);
     }
@@ -13,34 +13,34 @@
 }
 
 
-@keyframes circle{
-    0%{
-        transform:rotate(0deg)
-        translate(-165px)
-        rotate(0deg);
+@keyframes circle {
+    0% {
+        transform: rotate(0deg) translate(-165px) rotate(0deg);
 
     }
-    100%{
-        transform:rotate(360deg)
-        translate(-165px)
-        rotate(-360deg);
+    100% {
+        transform: rotate(360deg) translate(-165px) rotate(-360deg);
     }
 }
 
+/*шапочка*/
 header {
     width: 100%;
     height: 90px;
     background-color: #E1EAF9;
     display: table;
     top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 50;
 }
 
-.header_inner{
+.header_inner {
     display: flex;
     justify-content: space-between;
 }
 
-.logo{
+.logo {
     text-align: left;
     margin-top: 20px;
     margin-left: 60px;
@@ -48,7 +48,7 @@ header {
 
 .menu ul {
     list-style-type: none;
-    justify-content: stretch ;
+    justify-content: stretch;
     display: flex;
     margin-top: 25px;
     text-decoration: none;
@@ -65,6 +65,12 @@ header {
     color: #3671ff;
 }
 
+.nav_link {
+    list-style-type: none;
+    text-decoration: none;
+}
+
+/*body*/
 
 body {
     font-family: 'Montserrat', sans-serif;
@@ -72,31 +78,16 @@ body {
     margin: 0;
     padding: 0;
     border: 0;
-    color:#003D56;
+    color: #003D56;
 }
 
-.intro_text1{
-    width: 80%;
-    height: 300px;
-    position: absolute;
-    margin-top: 30px;
-    font-weight: 700;
-    font-size: 80px;
-    margin-left: 60px;
-}
-
-.banner1{
-    width: 100%;
-    height: 450px;
-}
-/* Container */
-.container{
-    width: 100%;
-    margin: 0 ;
+.container {
+    max-width: 100%;
+    margin: 0;
     padding-left: 0;
 }
 
-.input_form{
+.input_form {
     width: 600px;
     height: 300px;
     margin-left: 5%;
@@ -105,9 +96,9 @@ body {
     position: absolute;
 }
 
-.input_text{
+.input_text {
     display: block;
-    width: 100%;
+    max-width: 100%;
     padding: 0.375rem 0.75rem;
     font-size: 1rem;
     font-weight: 400;
@@ -115,34 +106,34 @@ body {
     background-color: rgba(0, 0, 0, 0.0);
 }
 
-.input_text, .input_button{
+.input_text, .input_button {
     border-radius: 10px;
 }
 
-.banner2{
-    margin-top: 80px;
-    justify-content: center;
-    padding: 50px 0;
-    display: flow;
+.intro_text1 {
+    width: 900px;
+    height: 300px;
+    position: absolute;
+    margin-top: 30px;
+    font-weight: 700;
+    font-size: 80px;
+    margin-left: 60px;
+    white-space: nowrap;
 }
 
-.banner2 blockquote q{
-    padding: 50px 50px;
-    font-size: 1.6rem;
-}
-
-.banner2 blockquote cite a {
-    text-decoration: none;
-    color: black;
-    text-align: left;
-    font-size: 1.2rem;
-}
+/*.banner1{*/
+/*    max-width: 100%;*/
+/*    height: 450px;*/
+/*}*/
 
 .project_inner {
-    width: 1250px;
+    /*width: 1250px;*/
+    max-width: 80%;
     height: 430px;
+    max-height: 80%;
     margin-top: 200px;
-    margin-left: 95px;
+    margin-left: auto;
+    margin-right: auto;
     border: 3px solid #1AD079;
     border-radius: 20px;
 }
@@ -154,10 +145,12 @@ body {
     font-size: 50px;
     color: #003D56;
 }
+
 .project_text {
-    width: 1000px;
-    height: 120px;
-    position: absolute;
+    /*width: 1000px;*/
+    /*height: 120px;*/
+    /*position: absolute;*/
+    margin-right: 100px;
     margin-left: 100px;
     font-weight: 500;
     font-size: 20px;
@@ -165,23 +158,45 @@ body {
     text-align: justify;
 }
 
-p{
+.banner2 {
+    margin-top: 80px;
+    justify-content: center;
+    padding: 50px 0;
+    display: flow;
+}
+
+.banner2 blockquote q {
+    padding: 50px 50px;
+    font-size: 1.6rem;
+}
+
+.banner2 blockquote cite a {
+    text-decoration: none;
+    color: black;
+    text-align: left;
+    font-size: 1.2rem;
+}
+
+p {
     font-family: 'Montserrat', sans-serif;
     margin-top: 30px;
     text-indent: 55px;
     color: #003D56;
 }
-.project_text1{
+
+.project_text1 {
     margin-top: 40px;
 }
-.project_text2{
+
+.project_text2 {
     margin-top: 20px;
 }
 
-.img_alphabet{
-
+/*Картинки*/
+.img_alphabet {
+    max-width: 100%;
     text-align: right;
-    margin-top: 80px;
+    margin-top: 150px;
     margin-right: 30px;
 }
 
@@ -196,7 +211,7 @@ p{
     animation: bounce-1 5s linear infinite;
 }
 
-.circle2{
+.circle2 {
     width: 350px;
     height: 350px;
     position: absolute;
@@ -207,21 +222,21 @@ p{
     animation: circle 7s linear infinite;
 }
 
-footer{
-    width: 100%;
+footer {
     height: 250px;
     background-color: #E1EAF9;
     font-size: 20px;
     color: #003D56;
 }
 
-.footer_inner{
+.footer_inner {
     display: flex;
     justify-content: flex-start;
     padding-top: 50px;
+    max-width: 100%;
 }
 
-.footer_logo{
+.footer_logo {
     /*margin-top: 20px;*/
     margin-left: 60px;
 }
@@ -240,9 +255,9 @@ footer{
     padding-left: 50px;
 }
 
-.footer_kont1{
+.footer_kont {
     position: absolute;
-    margin-left: 500px;
+    right: 90px;
 }
 
 .footer_kont_img {
@@ -250,7 +265,41 @@ footer{
     justify-content: space-between;
 }
 
-.footer_kont_img a img{
+.footer_kont_img a img {
     padding-right: 10px;
     padding-left: 10px;
 }
+
+/*Каталог жесткий*/
+table {
+    display: grid;
+    grid-template-columns:repeat(4, 1fr);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    border-spacing: 5px;
+    border-radius: 20px;
+    margin-top: 150px;
+    border: 5px solid #003D56;
+
+}
+
+th {
+    overflow: hidden;
+    /*white-space: nowrap;*/
+    /*text-overflow: ellipsis;*/
+    text-align: center;
+}
+
+td {
+    white-space: nowrap;
+    /*text-overflow: ellipsis;*/
+}
+
+tr:nth-child(even) td {
+    background: bisque;
+}
+
+tr:nth-child(odd) td {
+    background: burlywood;
+}
+

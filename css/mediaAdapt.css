@@ -1,14 +1,106 @@
-@media (max-width: 1200px) {
-    .header_inner{
-
+@media screen and (max-width: 1400px) and (min-width: 1250px) {
+    body{
+        background: fuchsia;
+    }
+    .project_inner{
+        height: 470px;
     }
 }
-@media (max-width: 1000px) {
-    
+@media screen and (max-width: 1249px) and (min-width: 1105px) {
+    body{
+        background: bisque;
+    }
+    .project_inner{
+        height: 530px;
+    }
 }
-@media (max-width: 768px) {
-    
+@media screen and (max-width: 1104px) and (min-width: 1000px) {
+    header{
+        max-width: 1000px;
+    }
+    .menu ul li{
+        justify-content: space-between;
+        white-space: nowrap;
+    }
+    .project_inner{
+        height: 590px;
+    }
+    .intro_text1{
+        text-align: center;
+        font-weight: 500;
+        font-size: 60px;
+    }
 }
-@media (max-width: 480px) {
-    
+@media screen and (max-width: 1000px) and (min-width: 830px) {
+    .menu ul{
+        justify-content: space-between;
+    }
+    .menu ul li{
+        padding-right: 45px;
+        padding-left: 25px;
+        white-space: nowrap;
+    }
+    body{
+        background: saddlebrown;
+    }
+    h4{
+        font-size: 50px;
+    }
+    .project_inner{
+        height: 700px;
+    }
+    .img_alphabet{
+        max-width: 100%;
+        text-align: center;
+    }
+    .intro_text1{
+        text-align: center;
+        font-weight: 500;
+        font-size: 60px;
+    }
+}
+@media screen and (max-width: 829px) and (min-width: 730px) {
+    .menu ul{
+        justify-content: space-between;
+        display: grid;
+        margin-left: 50px;
+    }
+    .menu ul li{
+        font-size: 1.8rem;
+        padding-right: 45px;
+        padding-left: 25px;
+        white-space: nowrap;
+    }
+    body{
+        background: aquamarine;
+    }
+    .project_inner{
+        height: 800px;
+    }
+    .intro_text1{
+        text-align: center;
+        font-weight: 300;
+        font-size: 60px;
+    }
+}
+@media screen and (max-width: 729px) {
+    .menu ul{
+        justify-content: space-between;
+        display: grid;
+        margin-right: 10px;
+    }
+    .menu ul li{
+        font-size: 1.8rem;
+        padding-right: 45px;
+        padding-left: 25px;
+        white-space: nowrap;
+    }
+    body{
+        background: aqua;
+    }
+    .intro_text1{
+        text-align: center;
+        font-weight: 500;
+        font-size: 60px;
+    }
 }
