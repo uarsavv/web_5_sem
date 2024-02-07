@@ -1,8 +1,5 @@
 @media screen and (max-width: 1400px) {
     /*and (min-width: 1250px)*/
-    body{
-        background: fuchsia;
-    }
     .project_inner{
         height: 470px;
     }
@@ -14,13 +11,9 @@
     .intro_text1{
         font-size: 3.5rem;
     }
-
 }
 @media screen and (max-width: 1249px) {
     /*and (min-width: 1105px)*/
-    body{
-        background: bisque;
-    }
     .img_alphabet img{
         width: 500px;
         height: 320px;
@@ -70,9 +63,6 @@
         white-space: nowrap;
         font-size: 1.2rem;
     }
-    body{
-        background: saddlebrown;
-    }
     .project_inner{
         height: 700px;
     }
@@ -98,9 +88,6 @@
         padding-right: 45px;
         padding-left: 25px;
         white-space: nowrap;
-    }
-    body{
-        background: aquamarine;
     }
     .project_inner{
         height: 800px;
@@ -131,9 +118,6 @@
     .menu ul li{
         padding-left: 10px;
         white-space: nowrap;
-    }
-    body{
-        background: aqua;
     }
     .intro_text1{
         font-size: 3rem;
