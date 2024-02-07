@@ -2,13 +2,12 @@ const form = document.getElementById('todo-form');
 const todoInput = document.getElementById('todo-input');
 const todoList = document.getElementById('todo-list');
 
-form.addEventListener('submit', function (event) { // отменяем стандартное поведение формы чтобы страница не перезагружалась
-    event.preventDefault();
+form.addEventListener('submit', function (event) { // суох гынабыт стандартное поведение формы чтобы страница не перезагружалась
+    event.preventDefault(); // юзаем для остановки стандартных действий браузера
 
     const task = todoInput.value.trim(); // значениебытын ылабыт полеттан уонна наадата суох пробелы сотторобут хехехе
 
     if (task !== '') {
-        // Create new list item
         const listItem = document.createElement('li');
         const taskText = document.createElement('span');
         const deleteButton = document.createElement('button');
@@ -26,8 +25,8 @@ form.addEventListener('submit', function (event) { // отменяем стан�
 
 
 todoList.addEventListener('click', function (event) {
-    if (event.target.classList.contains('delete')) { // Проверяем, что кликнутый элемент содержит класс delete
-        event.target.parentNode.remove(); // Удаляем родительский элемент кнопки удаления
+    if (event.target.classList.contains('delete')) { // проверяем, что кликнутый элемент содержит класс delete
+        event.target.parentNode.remove(); // удаляем родительский элемент кнопки удаления
     }
 });
 
@@ -41,13 +40,13 @@ todoList.addEventListener('click', function(event) {
 
 
 document.addEventListener('DOMContentLoaded', function () {
-    const savedTasks = localStorage.getItem('tasks'); // Получаем сохраненные задачи из localStorage
+    const savedTasks = localStorage.getItem('tasks'); // получаем сохраненные задачи из localStorage
 
     if (savedTasks !== null) {
-        todoList.innerHTML = savedTasks; // Список задачка кииллэрэбит сохраненнай задачалары
+        todoList.innerHTML = savedTasks; // список задачка кииллэрэбит сохраненнай задачалары
     }
 });
 
 window.addEventListener('beforeunload', function () {
-    localStorage.setItem('tasks', todoList.innerHTML); // Сохраняем состояние списка задач
+    localStorage.setItem('tasks', todoList.innerHTML); // сохраняем состояние списка задач
 });

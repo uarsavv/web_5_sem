@@ -1,18 +1,11 @@
+var currentPage = document.location.href; // получаем текущий путь страницы
+var menuLinks = document.querySelectorAll(".nav_link"); // получаем все ссылки меню
+menuLinks.forEach(function (link) {
 
-    // Получаем текущий путь страницы
-    var currentPage = document.location.href;
+    if (link.href === currentPage) { // проверяем совпадает ли адрес ссылки с текущим путем страницы
 
-    // Получаем все ссылки меню
-    var menuLinks = document.querySelectorAll(".nav_link");
+        link.classList.add("active"); // если совпадает, добавляем active к ссылке
 
-    // Перебираем ссылки
-    menuLinks.forEach(function(link) {
-    // Проверяем совпадает ли адрес ссылки с текущим путем страницы
-    if (link.href === currentPage) {
-    // Если совпадает, добавляем active к ссылке
-    link.classList.add("active");
-
-    // Добавляем класс "underlined" к родительскому элементу ссылки
-    link.parentNode.classList.add("underlined");
-}
+        link.parentNode.classList.add("underlined"); // добавляем класс "underlined" к родительскому элементу ссылки
+    }
 });
