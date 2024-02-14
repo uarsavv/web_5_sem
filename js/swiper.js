@@ -9,12 +9,12 @@ var swiper = new Swiper(".swiper", {
     // включаем скроллбар с возможностью его перетаскивания
     scrollbar: {
         el: '.swiper-scrollbar',
-        draggable: true, // штучка которая позволяет их перетаскивать с помощью мыши
+        draggable: false, // штучка которая позволяет их перетаскивать с помощью мыши
 
     },
     pagination: {
         el: '.swiper-pagination',
-        clickable: true,
+        clickable: false,
     },
 
     // устанавливаем эффект перелистывания слайдов как "flip"
