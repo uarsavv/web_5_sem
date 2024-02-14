@@ -471,4 +471,15 @@ label {
     background-color: #003D56;
 }
 
+.swiper-slide {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.swiper .swiper-pagination {
+    --swiper-pagination-color: #003;
+    --swiper-pagination-bullet-width: 5px;
+    --swiper-pagination-bullet-height: 5px;
+}
+
 

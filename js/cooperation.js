@@ -2,10 +2,10 @@ const form = document.getElementById('todo-form');
 const todoInput = document.getElementById('todo-input');
 const todoList = document.getElementById('todo-list');
 
-form.addEventListener('submit', function (event) { // суох гынабыт стандартное поведение формы чтобы страница не перезагружалась
-    event.preventDefault(); // юзаем для остановки стандартных действий браузера
+form.addEventListener('submit', function (event) {
+    event.preventDefault();
 
-    const task = todoInput.value.trim(); // значениебытын ылабыт полеттан уонна наадата суох пробелы сотторобут хехехе
+    const task = todoInput.value.trim();
 
     if (task !== '') {
         const listItem = document.createElement('li');
@@ -14,39 +14,68 @@ form.addEventListener('submit', function (event) { // суох гынабыт с
 
         taskText.textContent = task;
         deleteButton.textContent = 'Удалить';
-        deleteButton.classList.add('delete'); // класс эбэбит
+        deleteButton.classList.add('delete');
 
         listItem.appendChild(taskText);
         listItem.appendChild(deleteButton);
         todoList.appendChild(listItem);
         todoInput.value = '';
+
+        const tasks = getTasksFromJson(); //json
+        tasks.push(task);
+        saveTasksToJson(tasks);
     }
 });
 
+function getTasksFromJson() {
+    const savedTasks = localStorage.getItem('tasks'); // тут получаем сохр задачи из локал
+    if (savedTasks !== null) {
+        return JSON.parse(savedTasks);
+    }
+    return [];
+}
+
+function saveTasksToJson(tasks) { // преобразуем в джисонку и сохраняем под ключом таск
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+}
 
 todoList.addEventListener('click', function (event) {
-    if (event.target.classList.contains('delete')) { // проверяем, что кликнутый элемент содержит класс delete
-        event.target.parentNode.remove(); // удаляем родительский элемент кнопки удаления
+    if (event.target.classList.contains('delete')) {
+        event.target.parentNode.remove();
     }
 });
 
-
-todoList.addEventListener('click', function(event) {
+todoList.addEventListener('click', function (event) {
     if (event.target.tagName === 'LI' || event.target.parentNode.tagName === 'LI') {
         const listItem = event.target.tagName === 'LI' ? event.target : event.target.parentNode;
         listItem.classList.toggle('completed');
     }
 });
 
-
 document.addEventListener('DOMContentLoaded', function () {
-    const savedTasks = localStorage.getItem('tasks'); // получаем сохраненные задачи из localStorage
+    const tasks = getTasksFromJson();
+    if (tasks.length > 0) {
+        for (let i = 0; i < tasks.length; i++) {
+            const listItem = document.createElement('li');
+            const taskText = document.createElement('span');
+            const deleteButton = document.createElement('button');
 
-    if (savedTasks !== null) {
-        todoList.innerHTML = savedTasks; // список задачка кииллэрэбит сохраненнай задачалары
+            taskText.textContent = tasks[i];
+            deleteButton.textContent = 'Удалить';
+            deleteButton.classList.add('delete');
+
+            listItem.appendChild(taskText);
+            listItem.appendChild(deleteButton);
+            todoList.appendChild(listItem);
+        }
     }
 });
 
 window.addEventListener('beforeunload', function () {
-    localStorage.setItem('tasks', todoList.innerHTML); // сохраняем состояние списка задач
+    const tasks = [];
+    const listItems = todoList.querySelectorAll('li');
+    for (let i = 0; i < listItems.length; i++) {
+        tasks.push(listItems[i].querySelector('span').textContent); // для каждого эл списка задач добавляем текст задачи в массив задач
+    }
+    saveTasksToJson(tasks);
 });
